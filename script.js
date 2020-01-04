@@ -3,19 +3,19 @@
 var URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?&api-key=nkS7AyI0rtvD8AvA3cjFh4QiFmdLiA2I&q=';
 
 
-// $('#test-button').on('click', function() {
-// if($(""))
-var searchTerm = 'obama' ;//$("#search-input").val();
-//var numOfRecords = $("#number-input").val();
-var startYear = '19900101'; //$("#start-year-input").val();
-var endYear = '20160101';//$("#end-year-input").val();
+ $('#submit-button').on('click', function() {
+
+var searchTerm = $("#search-input").val();
+var numOfRecords = $("#number-input").val();
+var startYear = $("#start-year-input").val();
+var endYear = $("#end-year-input").val();
 
 if (startYear !== "") {
-    startYear = "&begin_date=" + startYear;
+    startYear = "&begin_date=" + startYear  +"0101";
 }
 
 if (endYear !== "") {
-    endYear = "&end_date=" + endYear;
+    endYear = "&end_date=" + endYear+"0101";
 }
 
 
@@ -26,7 +26,7 @@ $.ajax({
 }).then(function (response) {
     console.log(response);
 });
-     // });
+ });
      
 
 
