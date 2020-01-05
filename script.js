@@ -27,6 +27,7 @@ $('#submit-button').on('click', function() {
     url: queryURL,
     method: 'GET'
   }).then(function(response) {
+    $('#articles-div').empty();
     renderArticles(response, numOfRecords);
   });
 });
